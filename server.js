@@ -6,7 +6,7 @@ const { send } = require('express/lib/response');
 
 
 server.get("*", (req, res) => {
-    res.send("<h1>We go live</h1>")
+    res.send("<h1>We go live, this is second update since launch</h1>")
 })
 
 
