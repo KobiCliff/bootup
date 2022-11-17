@@ -1,5 +1,7 @@
 // setup mongodb with mongoose
 const mongoose = require('mongoose')
+const Page = require("../model/pages.model")
+const User = require('../model/user.model')
 let DB = {};
 
 // setup mongodb server connections
@@ -12,6 +14,10 @@ const connection = mongoose.connect(dburi, {
     console.log(`Error:` + err)
 });
 
+// Link cconnection and model
 DB.connection = connection;
+DB.Page = Page;
+DB.User = User;
 
+// export the server
 module.exports = DB;
