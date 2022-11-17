@@ -14,6 +14,11 @@ server.get("*", (req, res) => {
     res.send("<h1>We go live, this is second update since launch</h1>")
 })
 
+const formRouter = require('./routes/api/form.api')
+server.use('/form.api', formRouter)
+const pageRouter = require('./routes/api/pages.api')
+server.use('/pages.api', pageRouter)
+
 // import server and model
 const DB = require("./module/dbconnect");
 
